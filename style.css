@@ -270,7 +270,30 @@ section { padding: 100px 0; }
 .video-wrapper video { width: 100%; display: block; }
 
 /* ── TECH STACK ── */
-#tech { background: var(--dark-bg); }
+#tech { 
+  background: var(--dark-bg);
+  position: relative;
+  overflow: hidden;
+}
+.tech-side-bg {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  max-width: 400px;
+  object-fit: contain;
+  object-position: bottom;
+  opacity: 0.7;
+  z-index: 0;
+  pointer-events: none;
+}
+.tech-side-bg.left { left: 0; }
+.tech-side-bg.right { right: 0; }
+#tech .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
 .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem; margin-top: 3rem; }
 .tech-card {
   background: var(--dark-card);
