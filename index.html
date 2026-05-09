@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hybrid Revival – Udarata Dance Tracker | Digital Showcase</title>
+<meta name="description" content="An AI-powered real-time motion tracking system for learning Sri Lankan Udarata (Kandyan) traditional dance. Research by Jihan Sandaruwan, SLIIT.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">HYBRID REVIVAL</div>
+  <ul class="nav-links">
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#commercialization">Future</a></li>
+    <li><a href="#downloads">Downloads</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">SE4051 · R26 – IM – 006 · SLIIT 2026</div>
+    <h1 class="hero-title">Hybrid Revival<br><span>Udarata Dance Tracker</span></h1>
+    <p class="hero-sub">Interactive Real-Time Motion Tracking System for Learning<br>Sri Lankan Udarata (Kandyan) Traditional Dance</p>
+    <div class="hero-btns">
+      <a href="#solution" class="btn-primary">Explore Project</a>
+      <a href="#demo" class="btn-outline">Watch Demo</a>
+    </div>
+  </div>
+  <div class="hero-scroll">↓ &nbsp; Scroll to explore</div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="section-inner">
+    <div class="stats-grid">
+      <div><div class="stat-num">33</div><div class="stat-label">Body Landmarks</div></div>
+      <div><div class="stat-num">&lt;100ms</div><div class="stat-label">Feedback Latency</div></div>
+      <div><div class="stat-num">90%+</div><div class="stat-label">Pose Accuracy</div></div>
+      <div><div class="stat-num">0–100%</div><div class="stat-label">Similarity Score</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="section-inner">
+    <div class="problem-grid">
+      <div class="fade-up">
+        <div class="section-tag">The Challenge</div>
+        <h2 class="section-title">Why This <span>Matters</span></h2>
+        <p class="section-desc">Udarata (Kandyan) dance is Sri Lanka's intangible cultural heritage, traditionally transmitted through the guru–shishya method. Without real-time feedback during independent practice, subtle errors in posture, gesture, and rhythm go unnoticed — threatening both the learner's progress and the authenticity of the art form.</p>
+      </div>
+      <div class="problem-cards fade-up">
+        <div class="prob-card">
+          <div class="prob-icon">🏫</div>
+          <div>
+            <h4>No Guidance During Self-Practice</h4>
+            <p>Students practice independently outside class hours without any corrective feedback, causing errors to become habitual.</p>
+          </div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">📍</div>
+          <div>
+            <h4>Limited Access in Rural Areas</h4>
+            <p>Skilled Kandyan dance instructors are scarce in rural and remote areas, making consistent mentorship difficult to obtain.</p>
+          </div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">🔬</div>
+          <div>
+            <h4>No Specialized Digital Tools</h4>
+            <p>Existing motion tracking systems are built for Western dance forms. No tool captures the specific biomechanics of Udarata dance — Mandiya posture, Vattam rotations, rhythmic stamping.</p>
+          </div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">🏛️</div>
+          <div>
+            <h4>Cultural Heritage at Risk</h4>
+            <p>Without accurate digital archiving, the precise movement vocabulary of Kandyan dance risks being lost across generations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <div class="section-tag">Our Solution</div>
+      <h2 class="section-title">What We <span>Built</span></h2>
+      <p class="section-desc" style="margin:0 auto;">A webcam-based interactive learning system that captures full-body skeletal motion in real time, compares it against expert Kandyan dance reference models, and provides instant corrective feedback — all using a standard RGB webcam, no special hardware needed.</p>
+    </div>
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="solution-grid fade-up">
+      <div class="sol-card">
+        <div class="sol-icon">🎥</div>
+        <h3>Real-Time Pose Tracking</h3>
+        <p>Captures 33 three-dimensional body landmarks using MediaPipe Pose from a standard 1080p webcam at 30–60 FPS.</p>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">🧠</div>
+        <h3>DTW Motion Analysis</h3>
+        <p>Dynamic Time Warping algorithm compares learner movement sequences against expert Kandyan dance references — tolerant of speed differences.</p>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">📐</div>
+        <h3>Hip-Center Normalization</h3>
+        <p>All coordinates are normalized relative to the hip midpoint, making analysis independent of height, camera distance, or position.</p>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">💡</div>
+        <h3>Instant Corrective Feedback</h3>
+        <p>Live accuracy score (0–100%) with skeletal overlay visualization. Guidance like "Increase Knee Bend" or "Align Shoulders" displayed in real time.</p>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">📚</div>
+        <h3>Expert Motion Library</h3>
+        <p>Pre-recorded expert Kandyan dancer sequences stored as normalized 3D landmark trajectories — the ground truth for comparison.</p>
+      </div>
+      <div class="sol-card">
+        <div class="sol-icon">🌐</div>
+        <h3>Web-Based Interface</h3>
+        <p>FastAPI backend + browser-based frontend. No installation needed — runs entirely in the browser with a webcam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <div class="section-tag">Visual Showcase</div>
+      <h2 class="section-title">System <span>Screenshots</span></h2>
+      <p class="section-desc" style="margin:0 auto;">Explore the system interface, pose tracking overlays, accuracy scoring, and feedback visualization across different Udarata dance sequences.</p>
+    </div>
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item" onclick="openLightbox('assets/1.png')">
+        <img src="assets/1.png" alt="Screenshot 1" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/2.png')">
+        <img src="assets/2.png" alt="Screenshot 2" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/3.png')">
+        <img src="assets/3.png" alt="Screenshot 3" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/4.png')">
+        <img src="assets/4.png" alt="Screenshot 4" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/5.png')">
+        <img src="assets/5.png" alt="Screenshot 5" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/6.png')">
+        <img src="assets/6.png" alt="Screenshot 6" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/7.png')">
+        <img src="assets/7.png" alt="Screenshot 7" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/8.png')">
+        <img src="assets/8.png" alt="Screenshot 8" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/9.png')">
+        <img src="assets/9.png" alt="Screenshot 9" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('assets/10.png')">
+        <img src="assets/10.png" alt="Screenshot 10" loading="lazy">
+        <div class="gallery-overlay"><span>🔍</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Full view">
+</div>
+
+<!-- DEMO VIDEO -->
+<section id="demo">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <div class="section-tag">Live Demonstration</div>
+      <h2 class="section-title">See It In <span>Action</span></h2>
+      <p class="section-desc" style="margin:0 auto;">Watch the system track Udarata dance movements in real time, compare against the expert reference, and generate a live accuracy score.</p>
+    </div>
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="demo-container fade-up">
+      <div class="video-wrapper">
+        <video controls poster="assets/main_image.jpg">
+          <source src="assets/demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="tech">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <div class="section-tag">Under The Hood</div>
+      <h2 class="section-title">Technology <span>Stack</span></h2>
+    </div>
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="tech-grid fade-up">
+      <div class="tech-card"><div class="tech-icon">🤖</div><h4>MediaPipe</h4><p>Real-time 3D body landmark detection</p></div>
+      <div class="tech-card"><div class="tech-icon">🐍</div><h4>Python</h4><p>Core backend development language</p></div>
+      <div class="tech-card"><div class="tech-icon">📷</div><h4>OpenCV</h4><p>Video capture and frame processing</p></div>
+      <div class="tech-card"><div class="tech-icon">📊</div><h4>NumPy</h4><p>Data normalization and analysis</p></div>
+      <div class="tech-card"><div class="tech-icon">⏱️</div><h4>FastDTW</h4><p>Dynamic Time Warping sequence matching</p></div>
+      <div class="tech-card"><div class="tech-icon">⚡</div><h4>FastAPI</h4><p>High-performance WebSocket backend</p></div>
+      <div class="tech-card"><div class="tech-icon">🌐</div><h4>JavaScript</h4><p>Browser-side pose capture & UI</p></div>
+      <div class="tech-card"><div class="tech-icon">📐</div><h4>SciPy</h4><p>Euclidean distance computation</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <div class="section-tag">Academic Foundation</div>
+      <h2 class="section-title">Research &amp; <span>Validation</span></h2>
+      <p class="section-desc" style="margin:0 auto;">This system is grounded in rigorous academic research combining computer vision, kinesiology, and cultural heritage preservation.</p>
+    </div>
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="research-grid fade-up">
+      <div class="research-block">
+        <h3>Performance Metrics</h3>
+        <div class="metric-item">
+          <span class="metric-label">Pose Similarity Accuracy</span>
+          <span class="metric-val">≥ 90%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div>
+        <div class="metric-item" style="margin-top:1rem;">
+          <span class="metric-label">Real-Time Feedback Latency</span>
+          <span class="metric-val">&lt; 100ms</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div>
+        <div class="metric-item" style="margin-top:1rem;">
+          <span class="metric-label">Frame Processing Rate</span>
+          <span class="metric-val">30–60 FPS</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+        <div class="metric-item" style="margin-top:1rem;">
+          <span class="metric-label">Continuous Session Stability</span>
+          <span class="metric-val">30+ min</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+        <br>
+        <h3 style="margin-top:1.5rem;">Methodology</h3>
+        <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.8;margin-top:0.8rem;">Design Science Research (DSR) approach. Expert Kandyan dancers recorded performing foundational sequences. MediaPipe extracts 33 3D landmarks per frame. Hip-Center Normalization ensures position invariance. FastDTW compares learner vs expert sequences. Pre-test / Post-test statistical validation using paired t-test.</p>
+      </div>
+      <div class="research-block">
+        <h3>Development Phases</h3>
+        <div class="timeline">
+          <div class="tl-item">
+            <h4>Phase 1 – Expert Modeling (Offline)</h4>
+            <p>Recorded certified Udarata dance practitioner performing Mandiya, Vattam, and rhythmic stamping. Extracted & normalized 3D landmark trajectories as ground truth dataset.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Phase 2 – Live Tracking Engine (Online)</h4>
+            <p>Real-time webcam capture → MediaPipe landmark extraction → Hip-Center Normalization → 30-frame sliding window buffer → DTW pattern matching against expert library.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Phase 3 – Feedback &amp; Biomechanical Validation</h4>
+            <p>Rule-based layer validates Kandyan-specific constraints: Mandiya knee flexion depth, arm symmetry, shoulder alignment, spine verticality during stamping sequences.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Phase 4 – System Optimization</h4>
+            <p>Optimized for &lt;100ms latency. Runs on standard laptops without specialized hardware. Web-based deployment via FastAPI + WebSocket architecture.</p>
+          </div>
+          <div class="tl-item">
+            <h4>Phase 5 – Experimental Evaluation</h4>
+            <p>Two participant groups (control vs experimental). Paired t-test statistical analysis to measure improvement in movement accuracy over traditional video-based learning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIALIZATION -->
+<section id="commercialization">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <div class="section-tag">Future Potential</div>
+      <h2 class="section-title">Commercialization &amp; <span>Growth</span></h2>
+      <p class="section-desc" style="margin:0 auto;">Beyond the academic prototype — a clear path to real-world deployment as a technology-assisted training platform for traditional dance education in Sri Lanka and beyond.</p>
+    </div>
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="comm-grid fade-up">
+      <div class="comm-card">
+        <h3>🎯 Target Market</h3>
+        <ul>
+          <li>Dance academies across Sri Lanka</li>
+          <li>Cultural training institutes</li>
+          <li>School dance programs</li>
+          <li>Individual self-learners</li>
+          <li>Online dance education platforms</li>
+          <li>Cultural tourism &amp; performance centers</li>
+          <li>Heritage preservation organizations</li>
+        </ul>
+      </div>
+      <div class="comm-card">
+        <h3>💰 Revenue Model</h3>
+        <ul>
+          <li>Free tier – basic practice & limited analysis</li>
+          <li>Premium subscription – advanced feedback, full movement libraries, performance reports</li>
+          <li>Institutional licensing – multi-user access for academies</li>
+          <li>API access for educational platforms</li>
+          <li>Government cultural program partnerships</li>
+          <li>SaaS deployment for dance schools</li>
+        </ul>
+      </div>
+      <div class="comm-card">
+        <h3>🚀 Future Roadmap</h3>
+        <ul>
+          <li>Expand to Pahatharata &amp; Sabaragamuwa dance forms</li>
+          <li>Mobile app (iOS &amp; Android)</li>
+          <li>Cloud-based progress tracking</li>
+          <li>AI-generated personalized lesson plans</li>
+          <li>VR immersive dance training environment</li>
+          <li>Digital archive of Sri Lankan dance heritage</li>
+          <li>Multi-language feedback support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <div class="section-tag">The People</div>
+      <h2 class="section-title">Meet The <span>Team</span></h2>
+    </div>
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="team-grid fade-up">
+      <div class="team-card main-member">
+        <img src="assets/me.png" alt="Jihan Sandaruwan" class="team-avatar">
+        <h3>Jihan Sandaruwan</h3>
+        <div class="role">Lead Researcher &amp; Developer</div>
+        <div class="id">IT22294548</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar-placeholder">👤</div>
+        <h3>Perera R A V R</h3>
+        <div class="role">Researcher</div>
+        <div class="id">IT22056634</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar-placeholder">👤</div>
+        <h3>Hitiarachchi A M L</h3>
+        <div class="role">Researcher</div>
+        <div class="id">IT22079640</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar-placeholder">👤</div>
+        <h3>Gamage D S E P</h3>
+        <div class="role">Researcher</div>
+        <div class="id">IT22273826</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;color:var(--text-muted);font-size:0.85rem;">
+      B.Sc. (Hons) in IT – Interactive Media &nbsp;|&nbsp; Year 04 Semester 01 &nbsp;|&nbsp; SLIIT 2026
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOADS -->
+<section id="downloads">
+  <div class="section-inner">
+    <div class="fade-up" style="text-align:center;max-width:700px;margin:0 auto 1rem;">
+      <div class="section-tag">Resources</div>
+      <h2 class="section-title">Download <span>Materials</span></h2>
+      <p class="section-desc" style="margin:0 auto;">Access the full research documentation, proposal report, and source repository for academic review and collaboration.</p>
+    </div>
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="downloads-grid fade-up">
+      <a href="assets/proposal.pdf" download class="dl-card">
+        <div class="dl-icon">📄</div>
+        <div class="dl-info">
+          <h4>Proposal Report</h4>
+          <p>Full research proposal document</p>
+        </div>
+        <div class="dl-arrow">↓</div>
+      </a>
+      <a href="assets/research_paper.pdf" download class="dl-card">
+        <div class="dl-icon">📚</div>
+        <div class="dl-info">
+          <h4>Research Paper</h4>
+          <p>Pose Detection &amp; Validation Study</p>
+        </div>
+        <div class="dl-arrow">↓</div>
+      </a>
+      <a href="assets/demo.mp4" download class="dl-card">
+        <div class="dl-icon">🎬</div>
+        <div class="dl-info">
+          <h4>Demo Video</h4>
+          <p>System demonstration recording</p>
+        </div>
+        <div class="dl-arrow">↓</div>
+      </a>
+      <a href="https://github.com" target="_blank" class="dl-card">
+        <div class="dl-icon">💻</div>
+        <div class="dl-info">
+          <h4>Source Code</h4>
+          <p>GitHub repository (coming soon)</p>
+        </div>
+        <div class="dl-arrow">↗</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">HYBRID REVIVAL</div>
+  <div class="footer-sub">Udarata Dance Tracker · R26 – IM – 006</div>
+  <div class="footer-copy">© 2026 Jihan Sandaruwan · IT22294548 · SLIIT · SE4051 Trends in Digital Media</div>
+</footer>
+
+<script>
+// Lightbox
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// Scroll fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Animated progress bars
+const progObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.progress-fill').forEach(bar => {
+        const w = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => { bar.style.width = w; }, 200);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('#research').forEach(el => progObserver.observe(el));
+
+// Nav active highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+  });
+});
+</script>
+</body>
+</html>
