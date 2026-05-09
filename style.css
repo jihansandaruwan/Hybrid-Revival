@@ -219,9 +219,11 @@ section { padding: 100px 0; }
 #gallery { background: var(--dark-bg); }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   margin-top: 3rem;
+  max-width: 1000px;
+  margin-inline: auto;
 }
 .gallery-item {
   position: relative; overflow: hidden; border-radius: 12px;
